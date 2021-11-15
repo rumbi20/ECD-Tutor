@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.media.MediaView?>
+
+<AnchorPane fx:id="choice_screen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fx:id="image_choice" fitHeight="150.0" fitWidth="200.0" layoutX="51.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true" />
+      <MediaView fx:id="video_choice" fitHeight="200.0" fitWidth="200.0" layoutX="360.0" layoutY="107.0" />
+   </children>
+</AnchorPane>

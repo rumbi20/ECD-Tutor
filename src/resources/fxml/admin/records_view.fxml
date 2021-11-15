@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.e_learning.controllers.admin.TableCtrl">
+   <children>
+      <Separator layoutY="30.0" prefWidth="600.0" />
+      <SplitPane dividerPositions="0.7047781569965871" layoutX="7.0" layoutY="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0">
+        <items>
+            <TableView fx:id="psqlTable" editable="true" fixedCellSize="20.0" tableMenuButtonVisible="true">
+              <columns>
+                <TableColumn fx:id="name_" prefWidth="55.0" text="Student Name" />
+                <TableColumn fx:id="math_" prefWidth="64.0" text="Maths" />
+                  <TableColumn fx:id="eng_" prefWidth="69.0" text="English" />
+                  <TableColumn fx:id="sci_" prefWidth="73.0" text="Science" />
+                  <TableColumn fx:id="ict_" prefWidth="73.0" text="Bible" />
+                  <TableColumn fx:id="pe_" prefWidth="73.0" text="Physical Education" />
+              </columns>
+               <opaqueInsets>
+                  <Insets top="25.0" />
+               </opaqueInsets>
+            </TableView>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="366.0" prefWidth="69.0">
+               <children>
+                  <!-- <Button fx:id="refresh" layoutX="51.0" layoutY="228.0" mnemonicParsing="false" onAction="#reloadBtn" prefHeight="23.0" prefWidth="76.0" text="Reload" />
+                  <Button fx:id="exportBtn" layoutX="51.0" layoutY="152.0" mnemonicParsing="false" onAction="#printBtn" prefHeight="23.0" prefWidth="76.0" text="Export" />
+                  <Button fx:id="exit" layoutX="51.0" layoutY="265.0" mnemonicParsing="false" onAction="#exitBtn" prefHeight="23.0" prefWidth="76.0" text="Exit" /> -->
+                  <Button fx:id="subQuery" layoutX="51.0" layoutY="189.0" mnemonicParsing="false" onAction="#searchBtn" prefHeight="23.0" prefWidth="76.0" text="Search" />
+                  <TextField fx:id="searchBar" layoutX="5.0" layoutY="80.0" />
+                  <Text layoutX="21.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search For Student?" />
+                  <!-- <Button fx:id="add_rec" layoutX="51.0" layoutY="307.0" mnemonicParsing="false" onAction="#add_screen" prefHeight="23.0" prefWidth="76.0" text="Add" /> -->
+                  <MenuButton fx:id="menu_Button" layoutX="55.0" layoutY="116.0" mnemonicParsing="false" text="Menu">
+                    <items>
+                      <MenuItem fx:id="refresh" mnemonicParsing="false" onAction="#reloadBtn" text="Reload" />
+                      <MenuItem fx:id="exportBtn" mnemonicParsing="false" onAction="#printBtn" text="Export" />
+                        <Menu mnemonicParsing="false" text="Add">
+                          <items>
+                              <MenuItem fx:id="add_student" mnemonicParsing="false" onAction="#add_student_screen" text="Add Student" />
+                              <MenuItem fx:id="add_grades" mnemonicParsing="false" onAction="#add_grades_screen" text="Add Grades" />
+                          </items>
+                        </Menu>
+                        <MenuItem fx:id="exit" mnemonicParsing="false" onAction="#exitBtn" text="Exit" />
+                    </items>
+                  </MenuButton>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="30.0" right="10.0" top="10.0" />
+   </padding>
+</AnchorPane>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.media.MediaView?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.e_learning.controllers.content.VideoCtrl">
+   <center>
+      <MediaView fx:id="media_" fitHeight="300.0" fitWidth="600.0" preserveRatio="false" BorderPane.alignment="CENTER">
+         <viewport>
+            <Rectangle2D height="720.0" minX="16.0" minY="9.0" width="1280.0" />
+         </viewport>
+      </MediaView>
+   </center>
+   <bottom>
+      <ButtonBar prefHeight="40.0" prefWidth="120.0" BorderPane.alignment="CENTER">
+        <buttons>
+          <Button fx:id="open_" mnemonicParsing="false" onAction="#open_File" text="Open" />
+            <Button fx:id="play_" layoutX="525.0" layoutY="19.0" mnemonicParsing="false" onAction="#play_btn" text="Play" />
+            <Button fx:id="pause_" layoutX="525.0" layoutY="19.0" mnemonicParsing="false" onAction="#pause_btn" text="Pause" />
+            <Button fx:id="stop_" layoutX="190.0" layoutY="19.0" mnemonicParsing="false" onAction="#stop_btn" text="Stop" />
+        </buttons>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets right="145.0" />
+         </padding>
+      </ButtonBar>
+   </bottom>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="open_file" mnemonicParsing="false" onAction="#open_File" text="Open Video" />
+              <MenuItem fx:id="exitApp" mnemonicParsing="false" onAction="#close_App" text="Exit" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Options">
+               <items>
+                  <MenuItem fx:id="play_menu" mnemonicParsing="false" onAction="#play_btn" text="Play Video" />
+                  <MenuItem fx:id="pause_menu" mnemonicParsing="false" onAction="#pause_btn" text="Pause Video" />
+                  <MenuItem fx:id="stop_menu" mnemonicParsing="false" onAction="#stop_btn" text="Stop Video" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Report Bug" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

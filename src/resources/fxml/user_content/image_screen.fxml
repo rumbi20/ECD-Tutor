@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane fx:id="image_screen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.e_learning.controllers.content.ImageCtrl">
+   <AnchorPane StackPane.alignment="CENTER">
+      <children>
+            <ImageView fx:id="image_view" fitHeight="347.0" fitWidth="585.0" pickOnBounds="true" preserveRatio="true">
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+            </ImageView>
+      </children>
+   </AnchorPane>
+   <HBox StackPane.alignment="TOP_LEFT">
+      <children>
+            <MenuBar blendMode="SRC_ATOP">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem fx:id="imageOpen" mnemonicParsing="false" onAction="#openImage" text="Open Image" />
+                     <MenuItem fx:id="exit_" mnemonicParsing="false" onAction="#exitApp" text="Exit App" />
+                  </items>
+                </Menu>
+               <Menu mnemonicParsing="false" text="ECD Lesson">
+                  <items>
+                     <MenuItem fx:id="open_maths" mnemonicParsing="false" onAction="#openImage" text="Open Maths Worksheet" />
+                     <MenuItem fx:id="open_english" mnemonicParsing="false" onAction="#openImage" text="Open English Worksheet" />
+                     <MenuItem fx:id="open_sci" mnemonicParsing="false" onAction="#openImage" text="Open Science Worksheet" />
+                     <MenuItem fx:id="open_ict" mnemonicParsing="false" onAction="#openImage" text="Open ICT Worksheet" />
+                     <MenuItem fx:id="open_pe" mnemonicParsing="false" onAction="#openImage" text="Open PE Worksheet" />
+                    <MenuItem fx:id="closeApp" mnemonicParsing="false" onAction="#exitApp" text="Logout" />
+                  </items>
+               </Menu>
+               <Menu mnemonicParsing="false" text="Navigate">
+                  <items>
+                     <MenuItem fx:id="switch_user" mnemonicParsing="false" onAction="#switch_user_" text="Switch User" />
+                     <MenuItem fx:id="profile" mnemonicParsing="false" onAction="#profile_" text="Profile Screen" />
+                     <MenuItem fx:id="logout" mnemonicParsing="false" onAction="#switch_user_" text="Log Out" />
+                     <MenuItem fx:id="exit" mnemonicParsing="false" onAction="#exitApp" text="Exit App" />
+                  </items>
+               </Menu>
+               <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                     <MenuItem fx:id="help_" mnemonicParsing="false" text="Help" />
+                     <MenuItem fx:id="about" mnemonicParsing="false" onAction="#about_" text="About" />
+                  </items>
+               </Menu>
+              </menus>
+            </MenuBar>
+      </children>
+   </HBox>
+</StackPane>

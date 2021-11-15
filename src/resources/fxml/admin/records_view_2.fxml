@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.e_learning.controllers.admin.TableCtrl">
+   <children>
+      <Separator layoutY="30.0" prefWidth="600.0" />
+      <SplitPane dividerPositions="0.7047781569965871" layoutX="7.0" layoutY="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0">
+        <items>
+            <TableView fx:id="mysqlTable" editable="true" fixedCellSize="20.0" tableMenuButtonVisible="true">
+              <columns>
+                <TableColumn fx:id="name_" prefWidth="55.0" text="Students Name" />
+                <TableColumn fx:id="math_" prefWidth="64.0" text="Maths" />
+                  <TableColumn fx:id="eng_" prefWidth="69.0" text="English" />
+                  <TableColumn fx:id="sci_" prefWidth="73.0" text="Science" />
+                  <TableColumn fx:id="ict_" prefWidth="73.0" text="I.C.T" />
+                  <TableColumn fx:id="pe_" prefWidth="73.0" text="P.E" />
+              </columns>
+               <opaqueInsets>
+                  <Insets top="25.0" />
+               </opaqueInsets>
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem fx:id="export_current_view" mnemonicParsing="false" onAction="#export_tableView" text="Export Current Records" />
+                      <MenuItem fx:id="delete_by_id_context" mnemonicParsing="false" onAction="#delete_by_id_btn" text="Delete Selected Record" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+            </TableView>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="366.0" prefWidth="69.0">
+               <children>
+                  <VBox fx:id="sideBar_1" alignment="CENTER_LEFT" layoutX="5.0" layoutY="5.0" prefHeight="320.0" prefWidth="82.0" spacing="32.0">
+                     <children> 
+                        <Text layoutX="38.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student ID" />
+                        <Text layoutX="38.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Name" />
+                        <Text layoutX="38.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Maths" />
+                        <Text layoutX="38.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="English" />
+                        <Text layoutX="10.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Science" />
+                        <Text layoutX="10.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="P.E" />
+                        <Text layoutX="10.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I.C.T" />
+                     </children>
+                  </VBox>
+                  <VBox fx:id="sideBar_2" alignment="CENTER_RIGHT" layoutX="81.0" layoutY="6.0" prefHeight="320.0" prefWidth="82.0" spacing="24.0">
+                     <children>
+                        <TextField fx:id="id_entry" />
+                        <TextField fx:id="student_name_entry" layoutX="10.0" layoutY="194.0" />
+                        <TextField fx:id="maths_entry" layoutX="10.0" layoutY="217.0" />
+                        <TextField fx:id="english_entry" layoutX="10.0" layoutY="205.0" />
+                        <TextField fx:id="science_entry" layoutX="10.0" layoutY="228.0" />
+                        <TextField fx:id="pe_entry" layoutX="10.0" layoutY="65.0" />
+                        <TextField fx:id="ict_entry" layoutX="10.0" layoutY="65.0" />
+                     </children>
+                  </VBox>
+                  <ButtonBar layoutX="-19.0" layoutY="333.0" prefHeight="40.0" prefWidth="200.0">
+                    <buttons>
+                      <Button fx:id="discard_" mnemonicParsing="false" onAction="#discard_changes" text="Cancel" />
+                        <Button fx:id="update_btn" layoutX="125.0" layoutY="19.0" mnemonicParsing="false" onAction="#confirm_update" text="Update" />
+                    </buttons>
+                  </ButtonBar>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <MenuBar layoutX="2.0" layoutY="4.0">
+              <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="exportBtn" mnemonicParsing="false" onAction="#export_rec" text="Export All Records" />
+              <MenuItem fx:id="export_view" mnemonicParsing="false" onAction="#export_tableView" text="Export Selected Records" />
+              <MenuItem fx:id="log_out" mnemonicParsing="false" onAction="#switch_user" text="Log out" />
+              <MenuItem fx:id="close" mnemonicParsing="false" onAction="#exitBtn" text="Exit App" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+                        <Menu mnemonicParsing="false" text="Add">
+                          <items>
+                              <MenuItem fx:id="add_student" mnemonicParsing="false" onAction="#add_student_screen" text="Add Student" />
+                              <MenuItem fx:id="add_grades" mnemonicParsing="false" onAction="#add_grades_screen" text="Add Grades" />
+                          </items>
+                        </Menu>
+                  <Menu mnemonicParsing="false" text="Delete">
+                  <items>
+                  <MenuItem fx:id="delete_by_name" mnemonicParsing="false" onAction="#delete_by_name_btn" text="Delete By Name" />
+                  <MenuItem fx:id="delete_by_id" mnemonicParsing="false" onAction="#delete_by_id_btn" text="Delete Selected Record" />
+                </items>
+              </Menu>
+                  <MenuItem fx:id="export_btn" mnemonicParsing="false" onAction="#export_rec" text="Export All Records" />
+                  <MenuItem fx:id="export_view_btn" mnemonicParsing="false" onAction="#export_tableView" text="Export Selected Records" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Navigate">
+               <items>
+                  <MenuItem fx:id="view_students" mnemonicParsing="false" onAction="#view_students_" text="View Students" />
+                  <MenuItem fx:id="switch_user_" mnemonicParsing="false" onAction="#switch_user" text="Switch to normal user" />
+                  <MenuItem fx:id="exit" mnemonicParsing="false" onAction="#exitBtn" text="Exit App" />
+                  <MenuItem fx:id="refresh" mnemonicParsing="false" onAction="#reloadBtn" text="Reload Table" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="manual_" mnemonicParsing="false" onAction="#manual_btn" text="Manual" />
+              <MenuItem fx:id="about_" mnemonicParsing="false" onAction="#about_btn" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar> 
+      <TextField fx:id="searchBar" layoutX="264.0" layoutY="4.0" />
+      <Button fx:id="subQuery" layoutX="474.0" layoutY="5.0" mnemonicParsing="false" onAction="#searchBtn" prefHeight="23.0" prefWidth="76.0" text="Search" />
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="30.0" right="10.0" top="10.0" />
+   </padding>
+</AnchorPane>
